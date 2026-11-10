@@ -1,0 +1,14 @@
+---
+- name: configure BGP
+  hosts: catalyst
+  gather_facts: false
+  tasks:
+    - name: configure_BGP
+      cisco.ios.ios_config:
+        parents: 
+        - router BGP 65001
+        lines:
+        - neighbor 2.2.2.2 remote-as 65002
+        - neighbor 2.2.2.2 update-source lo0
+        - neighbor 2.2.2.2 EBGP-MULTIHOP
+      

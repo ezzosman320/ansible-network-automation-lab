@@ -1,0 +1,16 @@
+---
+- name: Configure physical interfaces on CAT8000V
+  hosts: catalyst
+  gather_facts: false
+  tasks:
+   - name: configure int gi2
+     cisco.ios.ios_config:
+      parents:
+        - interface gi2
+      lines:
+      - description configured_by_ansible
+      - ip address 10.0.0.1 255.0.0.0
+      - no shutdown
+      - ip ospf 10 area 0
+
+

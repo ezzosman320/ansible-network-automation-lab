@@ -1,0 +1,11 @@
+---
+- name: configure ospf
+  hosts: catalyst
+  gather_facts: false
+  tasks:
+    - name: configure_ospf
+      cisco.ios.ios_config:
+        parents: 
+        - router ospf 10
+        lines:
+        - router-id 1.1.1.1
