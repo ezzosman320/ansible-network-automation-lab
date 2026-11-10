@@ -4,8 +4,8 @@ CAT8000V ansible_host=192.168.68.130
 [catalyst:vars]
 ansible_connection=ansible.netcommon.network_cli
 ansible_network_os=cisco.ios.ios
-ansible_user=ansible
-ansible_password='Ansible@123'
+ansible_user=<your-username>
+ansible_password=<your-password>
 ansible_become=yes
 ansible_become_method=enable
-ansible_become_password='Ansible@123'
+ansible_become_password=<your-enable-password>
